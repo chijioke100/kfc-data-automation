@@ -12,6 +12,13 @@ SCOPED_CREDENTIALS = CREDENTIALS.with_scopes(SCOPE)
 GSPREAD_CLIENTS = gspread.authorize(SCOPED_CREDENTIALS)
 SHEET = GSPREAD_CLIENTS.open('kfc_data_automation')
 
-excess = SHEET.worksheet('excess')
-docs = excess.get_all_values()
-print(docs)
+def get_sales_data():
+    """
+    Get the sales data from the user
+    """
+    print('Enter sales data from the last business: ')
+
+    data_sales = input('Enter your data: ')
+    print(data_sales)
+
+get_sales_data()
