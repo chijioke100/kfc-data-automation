@@ -16,9 +16,10 @@ def get_sales_data():
     """
     Get the sales data from the user
     """
-    print('Enter sales data from the last business: ')
+    print('Enter sales data from the last business day: ')
+    print('The data should be 13 and separated by comma.')
 
     data_sales = input('Enter your data: ')
-    print(data_sales)
+    print(f'The data provided is: {data_sales}')
 
 get_sales_data()
