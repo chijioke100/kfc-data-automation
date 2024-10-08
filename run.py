@@ -21,7 +21,7 @@ def get_sales_data():
         print('Enter sales data from the last business day: ')
         print('The data should be 13 and each separated by a comma. ')
 
-        data_string = input('Enter your data: ')
+        data_string = input('Enter your data:\n')
    
         sales_data = data_string.split(',') #Remove commas from the string
         
