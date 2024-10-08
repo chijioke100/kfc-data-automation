@@ -32,6 +32,7 @@ def validate_data(values):
     exactly.
     """  
     try:
+        [int(value) for value in values] #Convert the values to integers
         if len(values) != 13:
             raise ValueError(
                 f'13 values required, provided values is {len(values)}'
