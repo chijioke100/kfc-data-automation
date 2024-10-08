@@ -47,9 +47,17 @@ def validate_data(values):
         print(f'Invalid data: {ve}, Put 13 values.\n')
         return False
 
-    return True            
+    return True      
+
+def update_sales_worksheet(data):
+    """
+    Add in to our sales worksheet with the data provided.
+    """
+    sales_worksheet = SHEET.worksheet('sales')
+    sales_worksheet.append_row(data)
+    print('New sales worksheet added. \n')
 
 data = get_sales_data()
 
 sales_data = [int(num) for num in data]
-print(sales_data)
+update_sales_worksheet(sales_data)
