@@ -65,8 +65,8 @@ def calculate_excess_data(sales_row):
     """    
     print('Calculate excess data \n')
     goods = SHEET.worksheet('goods').get_all_values()
-    pprint(goods) #Using pprint makes it easier to read
-
+    goods_row = goods[-1] #Using list slicing and indexing to get the goods last row data
+    pprint(goods_row) #Using pprint makes it easier to read
 
 
 def all_functions():
