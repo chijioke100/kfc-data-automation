@@ -60,13 +60,19 @@ def update_sales_worksheet(data):
 
 def calculate_excess_data(sales_row):
     """
-    Function to calculate the excess bewteen the sales and goods
-    where excess is the difference between sales and goods.
+    Function to calculate the excess bewteen the sales and goods;
+    where excess is the difference between sales from goods.
     """    
     print('Calculate excess data \n')
     goods = SHEET.worksheet('goods').get_all_values()
     goods_row = goods[-1] #Using list slicing and indexing to get the goods last row data
-    pprint(goods_row) #Using pprint makes it easier to read
+    #pprint(goods_row) #Using pprint makes it easier to read
+
+    excess_data = []
+    for goods, sales in zip(goods_row, sales_row):
+        excess = int(goods) - sales
+        excess_data.append(excess)
+    print(excess_data)    
 
 
 def all_functions():
