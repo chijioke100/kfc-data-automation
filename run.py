@@ -101,16 +101,28 @@ def get_last_7_data():
     collect the 7 days data entries
     """
     sales = SHEET.worksheet('sales')
-   # column = sales.col_values(1)
-   # print(column)
-
+   
     columns = []
     for indexes in range(1, 14):
         column = sales.col_values(indexes)
         columns.append(column[-7:])
-    pprint(columns)    
+    
+    return columns
 
+def calculate_goods_data(data):
+    """
+    Calculate the average of goods data and add 5% 
+    """    
+    print('Calculating goods data \n')
+    new_goods_data = []
 
+    for column in data:
+        int_column = [int(num) for num in column]
+        average = sum(int_column) / len(int_column)
+        goods_num = average * 1.05
+        new_goods_data.append(goods_num)
+
+    print(new_goods_data)
 
 
 
@@ -126,4 +138,5 @@ def all_functions():
 
 print('Welcome! This is KFC Data Automation')
 #all_functions()   
-get_last_7_data()
+sales_columns = get_last_7_data()
+calculate_goods_data(sales_columns)
