@@ -1,7 +1,6 @@
 # Import the entire gspread libraries and the Credentials
 import gspread
 from google.oauth2.service_account import Credentials
-from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -20,7 +19,7 @@ def get_sales_data():
     """
     while True: #To request for data until is valid
         print('Enter sales data from the last business day: ')
-        print('The data should be 13 and separated by comma. ')
+        print('The data should be 13 and each separated by a comma. ')
 
         data_string = input('Enter your data: ')
    
@@ -28,7 +27,7 @@ def get_sales_data():
         
 
         if validate_data(sales_data):
-            print('Data is valid')
+            print('Data is valid.')
             break
     return sales_data
 
@@ -50,31 +49,15 @@ def validate_data(values):
 
     return True      
 
-"""def update_sales_worksheet(data):
-    
-    #Update the sales worksheet with the data input.
-    
-    sales_worksheet = SHEET.worksheet('sales')
-    sales_worksheet.append_row(data)
-    print('New sales worksheet added. \n')
-
-def update_excess_worksheet(data):
-    
-    #update the excess worksheet with the data calculated.
-    
-    excess_worksheet = SHEET.worksheet('excess')
-    excess_worksheet.append_row(data)
-    print('New excess worksheet added. \n')"""
-
-def update_worksheet(data, worksheet): #Refactor update_sales_worksheet & update_excess_worksheet to update_worksheet.
+def update_worksheet(data, worksheet): 
     """
-    Receive and Update the sales and excess
+    Receive and update the sales and excess
     worksheet with the data.
     """
-    print(f'updating {worksheet} worksheet. \n')
+    print(f'Updating {worksheet} worksheet. \n')
     worksheet_to_update = SHEET.worksheet(worksheet)
     worksheet_to_update.append_row(data)
-    print(f'{worksheet} worksheet added \n')
+    print(f'{worksheet.capitalize()} worksheet added \n')
 
 
 
@@ -98,7 +81,7 @@ def calculate_excess_data(sales_row):
 def get_last_7_data():
     """
     Get the column list of sales worksheet and and 
-    collect the 7 days data entries
+    collect the 7 days(everyday in a week) data entries
     """
     sales = SHEET.worksheet('sales')
    
@@ -111,7 +94,8 @@ def get_last_7_data():
 
 def calculate_goods_data(data):
     """
-    Calculate the average of goods data and add 5% 
+    Calculate the average of goods 
+    data and add 5% profit 
     """    
     print('Calculating goods data \n')
     new_goods_data = []
