@@ -66,7 +66,7 @@ def update_excess_worksheet(data):
     excess_worksheet.append_row(data)
     print('New excess worksheet added. \n')"""
 
-def update_worksheet(data, worksheet):
+def update_worksheet(data, worksheet): #Refactor update_sales_worksheet & update_excess_worksheet to update_worksheet.
     """
     Receive and Update the sales and excess
     worksheet with the data.
@@ -93,7 +93,25 @@ def calculate_excess_data(sales_row):
         excess = int(goods) - sales
         excess_data.append(excess)
 
-    return excess_data   
+    return excess_data
+
+def get_last_7_data():
+    """
+    Get the column list of sales worksheet and and 
+    collect the 7 days data entries
+    """
+    sales = SHEET.worksheet('sales')
+   # column = sales.col_values(1)
+   # print(column)
+
+    columns = []
+    for indexes in range(1, 14):
+        column = sales.col_values(indexes)
+        columns.append(column)
+    pprint(columns)    
+
+
+
 
 
 def all_functions():
@@ -107,4 +125,5 @@ def all_functions():
     update_worksheet(new_excess_data, 'excess')
 
 print('Welcome! This is KFC Data Automation')
-all_functions()   
+#all_functions()   
+get_last_7_data()
