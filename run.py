@@ -50,21 +50,32 @@ def validate_data(values):
 
     return True      
 
-def update_sales_worksheet(data):
-    """
-    Update the sales worksheet with the data input.
-    """
+"""def update_sales_worksheet(data):
+    
+    #Update the sales worksheet with the data input.
+    
     sales_worksheet = SHEET.worksheet('sales')
     sales_worksheet.append_row(data)
     print('New sales worksheet added. \n')
 
 def update_excess_worksheet(data):
-    """
-    update the excess worksheet with the data calculated.
-    """
+    
+    #update the excess worksheet with the data calculated.
+    
     excess_worksheet = SHEET.worksheet('excess')
     excess_worksheet.append_row(data)
-    print('New excess worksheet added. \n')
+    print('New excess worksheet added. \n')"""
+
+def update_worksheet(data, worksheet):
+    """
+    Receive and Update the sales and excess
+    worksheet with the data.
+    """
+    print(f'updating {worksheet} worksheet. \n')
+    worksheet_to_update = SHEET.worksheet(worksheet)
+    worksheet_to_update.append_row(data)
+    print(f'{worksheet} worksheet added \n')
+
 
 
 def calculate_excess_data(sales_row):
@@ -91,9 +102,9 @@ def all_functions():
     """
     data = get_sales_data()
     sales_data = [int(num) for num in data]
-    update_sales_worksheet(sales_data)
+    update_worksheet(sales_data, 'sales')
     new_excess_data = calculate_excess_data(sales_data)
-    update_excess_worksheet(new_excess_data)
+    update_worksheet(new_excess_data, 'excess')
 
 print('Welcome! This is KFC Data Automation')
 all_functions()   
