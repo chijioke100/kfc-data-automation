@@ -52,11 +52,20 @@ def validate_data(values):
 
 def update_sales_worksheet(data):
     """
-    Add in to our sales worksheet with the data provided.
+    Update the sales worksheet with the data input.
     """
     sales_worksheet = SHEET.worksheet('sales')
     sales_worksheet.append_row(data)
     print('New sales worksheet added. \n')
+
+def update_excess_worksheet(data):
+    """
+    update the excess worksheet with the data calculated.
+    """
+    excess_worksheet = SHEET.worksheet('excess')
+    excess_worksheet.append_row(data)
+    print('New excess worksheet added. \n')
+
 
 def calculate_excess_data(sales_row):
     """
@@ -72,7 +81,8 @@ def calculate_excess_data(sales_row):
     for goods, sales in zip(goods_row, sales_row):
         excess = int(goods) - sales
         excess_data.append(excess)
-    print(excess_data)    
+
+    return excess_data   
 
 
 def all_functions():
@@ -82,7 +92,8 @@ def all_functions():
     data = get_sales_data()
     sales_data = [int(num) for num in data]
     update_sales_worksheet(sales_data)
-    calculate_excess_data(sales_data)
+    new_excess_data = calculate_excess_data(sales_data)
+    update_excess_worksheet(new_excess_data)
 
 print('Welcome! This is KFC Data Automation')
 all_functions()   
