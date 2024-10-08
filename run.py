@@ -14,12 +14,13 @@ SHEET = GSPREAD_CLIENTS.open('kfc_data_automation')
 
 def get_sales_data():
     """
-    Get the sales data from the user
+    Collect the sales data from the user
     """
     print('Enter sales data from the last business day: ')
-    print('The data should be 13 and separated by comma.')
+    print('The data should be 13 and separated by comma. ')
 
-    data_sales = input('Enter your data: ')
-    print(f'The data provided is: {data_sales}')
+    data_string = input('Enter your data: ')
+    print(f'The data provided is: {data_string}')
+    sales_data = data_string.split(',') #Remove commas from the string
 
 get_sales_data()
