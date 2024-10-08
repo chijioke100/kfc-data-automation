@@ -120,9 +120,9 @@ def calculate_goods_data(data):
         int_column = [int(num) for num in column]
         average = sum(int_column) / len(int_column)
         goods_num = average * 1.05
-        new_goods_data.append(goods_num)
+        new_goods_data.append(int(goods_num))
 
-    print(new_goods_data)
+    return new_goods_data
 
 
 
@@ -135,8 +135,9 @@ def all_functions():
     update_worksheet(sales_data, 'sales')
     new_excess_data = calculate_excess_data(sales_data)
     update_worksheet(new_excess_data, 'excess')
-
+    sales_columns = get_last_7_data()
+    goods_data = calculate_goods_data(sales_columns)
+    update_worksheet(goods_data, 'goods')
+    
 print('Welcome! This is KFC Data Automation')
-#all_functions()   
-sales_columns = get_last_7_data()
-calculate_goods_data(sales_columns)
+all_functions()   
