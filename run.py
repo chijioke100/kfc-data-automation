@@ -107,7 +107,7 @@ def get_last_7_data():
     columns = []
     for indexes in range(1, 14):
         column = sales.col_values(indexes)
-        columns.append(column)
+        columns.append(column[-7:])
     pprint(columns)    
 
 
