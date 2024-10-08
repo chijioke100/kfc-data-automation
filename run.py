@@ -1,6 +1,7 @@
 # Import the entire gspread libraries and the Credentials
 import gspread
 from google.oauth2.service_account import Credentials
+from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -57,10 +58,25 @@ def update_sales_worksheet(data):
     sales_worksheet.append_row(data)
     print('New sales worksheet added. \n')
 
+def calculate_excess_data(sales_row):
+    """
+    Function to calculate the excess bewteen the sales and goods
+    where excess is the difference between sales and goods.
+    """    
+    print('Calculate excess data \n')
+    goods = SHEET.worksheet('goods').get_all_values()
+    pprint(goods) #Using pprint makes it easier to read
+
+
+
 def all_functions():
     """
     Function to run all the programs.
     """
-data = get_sales_data()
-sales_data = [int(num) for num in data]
-update_sales_worksheet(sales_data)
+    data = get_sales_data()
+    sales_data = [int(num) for num in data]
+    update_sales_worksheet(sales_data)
+    calculate_excess_data(sales_data)
+
+print('Welcome! This is KFC Data Automation')
+all_functions()   
