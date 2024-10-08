@@ -14,7 +14,8 @@ SHEET = GSPREAD_CLIENTS.open('kfc_data_automation')
 
 def get_sales_data():
     """
-    Collect the sales data from the user
+    Collect the sales data from the user and 
+    request for data until when valid.
     """
     while True: #To request for data until is valid
         print('Enter sales data from the last business day: ')
@@ -49,3 +50,6 @@ def validate_data(values):
     return True            
 
 data = get_sales_data()
+
+sales_data = [int(num) for num in data]
+print(sales_data)
