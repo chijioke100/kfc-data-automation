@@ -57,7 +57,10 @@ def update_sales_worksheet(data):
     sales_worksheet.append_row(data)
     print('New sales worksheet added. \n')
 
+def all_functions():
+    """
+    Function to run all the programs.
+    """
 data = get_sales_data()
-
 sales_data = [int(num) for num in data]
 update_sales_worksheet(sales_data)
