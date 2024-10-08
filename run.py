@@ -16,14 +16,19 @@ def get_sales_data():
     """
     Collect the sales data from the user
     """
-    print('Enter sales data from the last business day: ')
-    print('The data should be 13 and separated by comma. ')
+    while True: #To request for data until is valid
+        print('Enter sales data from the last business day: ')
+        print('The data should be 13 and separated by comma. ')
 
-    data_string = input('Enter your data: ')
-    #print(f'The data provided is: {data_string}')
-    sales_data = data_string.split(',') #Remove commas from the string
-    validate_data(sales_data)
+        data_string = input('Enter your data: ')
+   
+        sales_data = data_string.split(',') #Remove commas from the string
+        
 
+        if validate_data(sales_data):
+            print('Data is valid')
+            break
+    return sales_data
 
 def validate_data(values):
     """
@@ -38,6 +43,9 @@ def validate_data(values):
                 f'13 values required, provided values is {len(values)}'
             )
     except ValueError as ve:
-        print(f'Invalid data: {ve}, Put 13 values.\n')        
+        print(f'Invalid data: {ve}, Put 13 values.\n')
+        return False
 
-get_sales_data()
+    return True            
+
+data = get_sales_data()
