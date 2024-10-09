@@ -7,10 +7,10 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
     ]
-CREDENTIALS = Credentials.from_service_account_file('credentials.json')
-SCOPED_CREDENTIALS = CREDENTIALS.with_scopes(SCOPE)
-GSPREAD_CLIENTS = gspread.authorize(SCOPED_CREDENTIALS)
-SHEET = GSPREAD_CLIENTS.open('kfc_data_automation')
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('kfc_data_automation')
 
 def get_sales_data():
     """
