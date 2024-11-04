@@ -9,8 +9,6 @@ help to reduce the excess and for recommendations, and also to be able to predic
 
 ![Responsive image](<assets/images/kfc data-responsive image.png>)
 
-## How the program works
-
 ## Features
 
 ## Existing Features
@@ -31,7 +29,28 @@ o	You must enter numbers
 
 o	Not exactly 13 numbers will invalidate the input.
 
-![validate input numbers](<assets/images/invaliddata.png>)
+o	Entering 13 integer numbers will validate the input.
+
+![invalid input numbers](<assets/images/invaliddata.png>)
+
+![valid input numbers](<assets/images/validdata.png>)
+
+## Future Features
+
+•	Add more functions
+
+•	Calculate more business functions
+
+## Testing
+
+I have tested this program by doing the following:
+
+•	Running the program in the power shell local terminal
+
+•	Input both valid and invalid data 
+
+•	Tested in Code institute heroku terminal.
+
 
 
 
