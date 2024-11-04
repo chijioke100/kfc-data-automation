@@ -51,6 +51,22 @@ I have tested this program by doing the following:
 
 •	Tested in Code institute heroku terminal.
 
+## Bugs
+
+### Solved bugs
+
+•	The program could not run because I have forgotten to call the all_functions(); 
+
+    which I fixed when I called it.
+
+•	In importing libraries and credentials, I made a mistake by using small letter 
+
+    case for ‘c’ in credentials; which was fixed with upper case.
+
+### Remaining bugs
+
+•	No remaining bugs
+
 
 
 
