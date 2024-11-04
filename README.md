@@ -75,7 +75,27 @@ o	Few errors returned from [PEP8](https://pep8ci.herokuapp.com/) but did not aff
 
 ## Deployment
 
-This pro
+This program was deployed using Code institute's mock terminal for Heroku
+
+•	Steps for deployment
+
+o	Fork or clone this repository
+
+o	Create a new Heroku app
+
+o	Set the buildbacks to Python and NodeJs in that order
+
+o	Link the Heroku app to the repository
+
+o	Click on Deploy
+
+## Credits
+
+•	The concept style of the structure of the work and the coding was taken from Love sandwiches project
+
+•	Code institute for deployment terminal
+
+
 
 
 
