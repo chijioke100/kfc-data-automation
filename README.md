@@ -65,7 +65,18 @@ I have tested this program by doing the following:
 
 ### Remaining bugs
 
-•	No remaining bugs
+•	Bugs remaining are whitespaces, blanks errors that did not affect the program not to run.
+
+## Validator Testing
+
+•	PEP8
+
+o	Few errors returned from [PEP8](https://pep8ci.herokuapp.com/) but did not affect the program.
+
+## Deployment
+
+This pro
+
 
 
 
