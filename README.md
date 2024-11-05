@@ -9,6 +9,16 @@ excess and for recommendations, and also to be able to predict the future market
 
 ![Responsive image](<assets/images/kfc data-responsive image.png>)
 
+## How the program works
+
+KFC Data Automation helps in the daily business. The program request data of the last business day from the user, 
+
+which must be 13 integer numbers.
+
+When the program gets the input data, it will update the sales worksheet. 
+
+it will then calculate the excess and goods data, update and add them both to their separate worksheets.
+
 ## Features
 
 ## Existing Features
@@ -37,9 +47,9 @@ o	Entering 13 integer numbers will validate the input.
 
 ## Future Features
 
-•	Add more functions
+•	Add more daily business processess like expenses, profit
 
-•	Calculate more business functions
+•	Calculate more daily business processess for enhancement 
 
 ## Testing
 
@@ -55,13 +65,11 @@ I have tested this program by doing the following:
 
 ### Solved bugs
 
-•	The program could not run because I have forgotten to call the all_functions(); 
+•	The program could not run because I have forgotten to call the all_functions; which I fixed when I called it.
 
-    which I fixed when I called it.
+•	In importing libraries and credentials, I made a mistake by using small letter case for ‘c’ in credentials; which was fixed 
 
-•	In importing libraries and credentials, I made a mistake by using small letter 
-
-    case for ‘c’ in credentials; which was fixed with upper case.
+with upper case.
 
 ### Remaining bugs
 
