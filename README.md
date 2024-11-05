@@ -1,9 +1,9 @@
 # KFC Data Automation
-KFC Data Automation is a command line based program that collect sales data, validate and update the data; calculate
+KFC Data Automation is a command line based program that collect sales data, validate and update the data; 
 
-the excess and goods data within the company. The goal is to save the company a repetitive task, help to reduce the 
+calculate the excess and goods data within the company. The goal is to save the company a repetitive task, 
 
-excess and for recommendations, and also to be able to predict the future market.
+help to reduce the excess and for recommendations, and also to be able to predict the future market.
 
 <font color = 'blue'>Here is the live version of my project</font>
 
@@ -21,7 +21,7 @@ it will then calculate the excess and goods data, update and add them both to th
 
 ## Features
 
-## Existing Features
+### Existing Features
 
 •	Enter data
 
@@ -45,7 +45,7 @@ o	Entering 13 integer numbers will validate the input.
 
 ![valid input numbers](<assets/images/validdata.png>)
 
-## Future Features
+### Future Features
 
 •	Add more daily business processess like expenses, profit
 
