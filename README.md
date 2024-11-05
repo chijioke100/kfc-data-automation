@@ -99,7 +99,7 @@ o	Click on Deploy
 
 ## Credits
 
-•	The concept style of the structure of the work and the coding was taken from Love sandwiches project
+•	The concept style of the structure of the work and the coding was taken from [Love sandwiches project](https://love-sandwiche52-19c5ce1d9059.herokuapp.com/)
 
 •	Code institute for deployment terminal
 
